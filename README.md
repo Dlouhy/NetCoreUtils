@@ -7,12 +7,11 @@
 - NetCoreUtils can be used with .NET 6, .NET 7 or .NET 8
 
 ## How to use
-### Install NetCoreUtils
 Install NetCoreUtils via NuGet package
 
     PM> Install-Package Dlouhy.NetCoreUtils
 
-### 2. Examples of using
+### Examples of using
 
 #### DateTimeRange value object example
 
