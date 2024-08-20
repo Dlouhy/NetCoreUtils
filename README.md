@@ -4,7 +4,7 @@
 
 ## Requirements
 
-- NetCoreUtils can be used with.NET 6, .NET 7 or .NET 8
+- NetCoreUtils can be used with .NET 6, .NET 7 or .NET 8
 
 ## How to use
 ### Install NetCoreUtils
