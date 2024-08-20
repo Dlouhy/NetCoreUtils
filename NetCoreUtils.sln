@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreUtils", "NetCoreUtils\NetCoreUtils.csproj", "{53EB64D6-0C98-4F79-BA63-8ACD55A49885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreUtilsTests", "NetCoreUtilsTests\NetCoreUtilsTests.csproj", "{D1082F5D-FFC9-478C-8BE2-6C2777C83E23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53EB64D6-0C98-4F79-BA63-8ACD55A49885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53EB64D6-0C98-4F79-BA63-8ACD55A49885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53EB64D6-0C98-4F79-BA63-8ACD55A49885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53EB64D6-0C98-4F79-BA63-8ACD55A49885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1082F5D-FFC9-478C-8BE2-6C2777C83E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1082F5D-FFC9-478C-8BE2-6C2777C83E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1082F5D-FFC9-478C-8BE2-6C2777C83E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1082F5D-FFC9-478C-8BE2-6C2777C83E23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D02D3FE9-2705-4888-9CD6-F48385796564}
+	EndGlobalSection
+EndGlobal
