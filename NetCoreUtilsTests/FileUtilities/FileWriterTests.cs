@@ -50,7 +50,7 @@ namespace NetCoreUtils.FileUtilities.Tests
             var text = "This is some test text.";
             var encoding = Encoding.UTF8;
             using var cancellationTokenSource = new CancellationTokenSource();
-            // cancellationTokenSource.Cancel();
+            cancellationTokenSource.Cancel();
             var cancellationToken = cancellationTokenSource.Token;
 
             // Act & Assert
