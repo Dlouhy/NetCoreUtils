@@ -11,7 +11,7 @@
     <PackageId>Dlouhy.NetCoreUtils</PackageId>
     <Version>1.0.0</Version>
     <PackageProjectUrl>https://github.com/Dlouhy/NetCoreUtils</PackageProjectUrl>
-    <Description>NetCoreUtils is a collection of C# reusable functions and methods</Description>
+    <Description>NetCoreUtils is a collection of C# functions and methods for various tasks.</Description>
     <RepositoryUrl>https://github.com/Dlouhy/NetCoreUtils.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>DateTimeOffset, Email, Value Object</PackageTags>
