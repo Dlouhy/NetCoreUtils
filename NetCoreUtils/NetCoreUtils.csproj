@@ -14,7 +14,7 @@
     <Description>NetCoreUtils is a collection of C# functions and methods for various tasks.</Description>
     <RepositoryUrl>https://github.com/Dlouhy/NetCoreUtils.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>DateTimeOffset, Email, Value Object</PackageTags>
+    <PackageTags>DateTimeOffset, Email, ValueObject, FileWriter, FileReader, IPAddress, UnixTime</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
