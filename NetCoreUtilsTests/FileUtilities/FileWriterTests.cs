@@ -165,5 +165,50 @@ namespace NetCoreUtils.FileUtilities.Tests
             // Act & Assert
             await Assert.ThrowsExceptionAsync<ArgumentNullException>(async () => await FileWriter.WriteByteArrayToFileAsync(emptyPath, data));
         }
+
+        [TestMethod]
+        public async Task WriteStreamToFileAsync_ShouldWriteStreamContentsToFileAsync()
+        {
+            // Arrange
+            var temporaryFilePath = Path.GetTempFileName();
+            var streamContent = new byte[] { 0x01, 0x02, 0x03 };
+            using var sourceStream = new MemoryStream(streamContent);
+
+            // Act
+            await FileWriter.WriteStreamToFileAsync(temporaryFilePath, sourceStream);
+
+            // Assert
+            using var fileStream = File.Open(temporaryFilePath, FileMode.Open, FileAccess.Read, FileShare.Delete);
+            {
+                var actualContent = new byte[streamContent.Length];
+                await fileStream.ReadAsync(actualContent);
+
+                CollectionAssert.AreEqual(streamContent, actualContent);
+            }
+
+            // Cleanup
+            File.Delete(temporaryFilePath);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public async Task WriteStreamToFileAsync_ShouldThrowArgumentNullException_WhenFilePathIsNullAsync()
+        {
+            // Arrange
+            Stream sourceStream = new MemoryStream();
+
+            // Act
+            await FileWriter.WriteStreamToFileAsync(null, sourceStream);
+        }
+
+        [TestMethod]
+        public async Task WriteStreamToFileAsync_ShouldThrowArgumentNullException_WhenSourceStreamIsNullAsync()
+        {
+            // Arrange
+            string filePath = "test.txt";
+
+            // Act
+            await Assert.ThrowsExceptionAsync<ArgumentNullException>(async () => await FileWriter.WriteStreamToFileAsync(filePath, null));
+        }
     }
 }
