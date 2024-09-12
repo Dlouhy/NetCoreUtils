@@ -2,7 +2,8 @@
 
 *NetCoreUtils* is a collection of C# reusable functions and methods.
 
-![NuGet Version](https://img.shields.io/nuget/v/FioBankApiClient?style=flat-square&link=https://www.nuget.org/packages/Dlouhy.NetCoreUtils)
+
+[![NuGet Status](https://img.shields.io/nuget/v/Dlouhy.NetCoreUtils.svg?style=flat-square&label=nuget)](https://www.nuget.org/packages/Dlouhy.NetCoreUtils/)
 
 
 ## Requirements
