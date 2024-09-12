@@ -191,14 +191,13 @@ namespace NetCoreUtils.FileUtilities.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public async Task WriteStreamToFileAsync_ShouldThrowArgumentNullException_WhenFilePathIsNullAsync()
         {
             // Arrange
             Stream sourceStream = new MemoryStream();
 
             // Act
-            await FileWriter.WriteStreamToFileAsync(null, sourceStream);
+            await Assert.ThrowsExceptionAsync<ArgumentNullException>(async () => await FileWriter.WriteStreamToFileAsync(null, sourceStream));
         }
 
         [TestMethod]
