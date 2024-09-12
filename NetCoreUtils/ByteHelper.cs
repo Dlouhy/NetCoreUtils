@@ -10,9 +10,7 @@
         /// </summary>
         /// <param name="jaggedArray">The jagged array of bytes to convert.</param>
         /// <returns>A single array of bytes representing the jagged array.</returns>
-        /// <exception cref="ArgumentNullException">
-        /// Thrown when the input jagged array is null.
-        /// </exception>
+        /// <exception cref="ArgumentNullException">Thrown when the input jagged array is null.</exception>
         public static async Task<byte[]> JaggedArrayToSingleArrayAsync(params byte[][] jaggedArray)
         {
             if (jaggedArray == null || jaggedArray.Any(a => a == null))
@@ -40,9 +38,7 @@
         /// <exception cref="ArgumentNullException">
         /// Thrown when the input string is null or empty.
         /// </exception>
-        /// <exception cref="FormatException">
-        /// Thrown when the input string is not even-numbered.
-        /// </exception>
+        /// <exception cref="FormatException">Thrown when the input string is not even-numbered.</exception>
         public static byte[] HexStringToByteArray(this string hex)
         {
             if (string.IsNullOrEmpty(hex))
