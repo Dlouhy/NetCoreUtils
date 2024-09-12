@@ -31,7 +31,9 @@
         [TestMethod]
         public void CreateNewStart_ValidNewStart_ReturnsSuccess()
         {
-            var originalRange = DateTimeRange.Create(DateTimeOffset.UtcNow, DateTimeOffset.UtcNow.AddDays(1)).Value;
+            var currentDateTime = DateTimeOffset.UtcNow;
+
+            var originalRange = DateTimeRange.Create(currentDateTime, currentDateTime.AddDays(1)).Value;
             var newStart = originalRange.StartDateTime.Subtract(TimeSpan.FromDays(1));
 
             var result = originalRange.CreateNewStart(newStart);
@@ -45,7 +47,9 @@
         [TestMethod]
         public void CreateNewStart_NewStartAfterEnd_ReturnsFailure()
         {
-            var originalRange = DateTimeRange.Create(DateTimeOffset.UtcNow, DateTimeOffset.UtcNow.AddDays(1)).Value;
+            var currentDateTime = DateTimeOffset.UtcNow;
+
+            var originalRange = DateTimeRange.Create(currentDateTime, currentDateTime.AddDays(1)).Value;
             var newStart = originalRange.EndDateTime.AddDays(1);
 
             var result = originalRange.CreateNewStart(newStart);
@@ -56,7 +60,9 @@
         [TestMethod]
         public void CreateNewEnd_ValidNewEnd_ReturnsSuccess()
         {
-            var originalRange = DateTimeRange.Create(DateTimeOffset.UtcNow, DateTimeOffset.UtcNow.AddDays(1)).Value;
+            var currentDateTime = DateTimeOffset.UtcNow;
+
+            var originalRange = DateTimeRange.Create(currentDateTime, currentDateTime.AddDays(1)).Value;
             var newEnd = originalRange.EndDateTime.AddHours(2);
 
             var result = originalRange.CreateNewEnd(newEnd);
@@ -70,7 +76,9 @@
         [TestMethod]
         public void CreateNewEnd_NewEndBeforeStart_ReturnsFailure()
         {
-            var originalRange = DateTimeRange.Create(DateTimeOffset.UtcNow, DateTimeOffset.UtcNow.AddDays(1)).Value;
+            var currentDateTime = DateTimeOffset.UtcNow;
+
+            var originalRange = DateTimeRange.Create(currentDateTime, currentDateTime.AddDays(1)).Value;
             var newEnd = originalRange.StartDateTime.Subtract(TimeSpan.FromHours(1));
 
             var result = originalRange.CreateNewEnd(newEnd);

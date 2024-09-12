@@ -19,8 +19,7 @@ namespace NetCoreUtils
         public DateTimeOffset EndDateTime { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DateTimeRange"/> class with a start and end
-        /// date.
+        /// Initializes a new instance of the <see cref="DateTimeRange"/> class with a start and end date.
         /// </summary>
         /// <param name="startDateTime">The start date and time.</param>
         /// <param name="endDateTime">The end date and time.</param>
@@ -74,12 +73,9 @@ namespace NetCoreUtils
         }
 
         /// <summary>
-        /// Formats the StartDateTime property into a string using the specified format and
-        /// InvariantCulture.
+        /// Formats the StartDateTime property into a string using the specified format and InvariantCulture.
         /// </summary>
-        /// <param name="dateTimeFormat">
-        /// The format string to use for formatting the date and time.
-        /// </param>
+        /// <param name="dateTimeFormat">The format string to use for formatting the date and time.</param>
         /// <returns>A string representing the formatted StartDateTime.</returns>
         public string StartDateTimeFormatted(string dateTimeFormat)
         {
@@ -89,9 +85,7 @@ namespace NetCoreUtils
         /// <summary>
         /// Formats the StartDateTime property into a string using the specified format and culture.
         /// </summary>
-        /// <param name="dateTimeFormat">
-        /// The format string to use for formatting the date and time.
-        /// </param>
+        /// <param name="dateTimeFormat">The format string to use for formatting the date and time.</param>
         /// <param name="cultureInfo">The CultureInfo object to use for formatting.</param>
         /// <returns>A string representing the formatted StartDateTime.</returns>
         public string StartDateTimeFormatted(string dateTimeFormat, CultureInfo cultureInfo)
@@ -100,12 +94,9 @@ namespace NetCoreUtils
         }
 
         /// <summary>
-        /// Formats the EndDateTime property into a string using the specified format and the
-        /// InvariantCulture.
+        /// Formats the EndDateTime property into a string using the specified format and the InvariantCulture.
         /// </summary>
-        /// <param name="dateTimeFormat">
-        /// The format string to use for formatting the date and time.
-        /// </param>
+        /// <param name="dateTimeFormat">The format string to use for formatting the date and time.</param>
         /// <returns>A string representing the formatted EndDateTime.</returns>
         public string EndDateTimeFormatted(string dateTimeFormat)
         {
@@ -115,9 +106,7 @@ namespace NetCoreUtils
         /// <summary>
         /// Formats the EndDateTime property into a string using the specified format and culture.
         /// </summary>
-        /// <param name="dateTimeFormat">
-        /// The format string to use for formatting the date and time.
-        /// </param>
+        /// <param name="dateTimeFormat">The format string to use for formatting the date and time.</param>
         /// <param name="cultureInfo">The CultureInfo object to use for formatting.</param>
         /// <returns>A string representing the formatted EndDateTime.</returns>
         public string EndDateTimeFormatted(string dateTimeFormat, CultureInfo cultureInfo)
@@ -126,8 +115,7 @@ namespace NetCoreUtils
         }
 
         /// <summary>
-        /// Creates a new DateTimeRange by adding the specified duration to the internal
-        /// StartDateTime.
+        /// Creates a new DateTimeRange by adding the specified duration to the internal StartDateTime.
         /// </summary>
         /// <param name="newDuration">The TimeSpan representing the duration to add.</param>
         /// <returns>A Result object containing the newly created DateTimeRange.</returns>
@@ -175,9 +163,7 @@ namespace NetCoreUtils
         /// <summary>
         /// Creates a new Result object containing a DateTimeRange for one week.
         /// </summary>
-        /// <param name="startDay">
-        /// The DateTimeOffset representing the start day of the week range.
-        /// </param>
+        /// <param name="startDay">The DateTimeOffset representing the start day of the week range.</param>
         /// <returns>
         /// A Result object containing the newly created DateTimeRange spanning the specified week.
         /// </returns>
@@ -194,16 +180,14 @@ namespace NetCoreUtils
         /// Optional. The datetime representing the current time. If not provided,
         /// DateTimeOffset.UtcNow is used.
         /// </param>
-        /// <returns>
-        /// A Result object containing a DateTimeRange representing the previous month.
-        /// </returns>
+        /// <returns>A Result object containing a DateTimeRange representing the previous month.</returns>
         public static Result<DateTimeRange> CreatePreviousMonth(DateTimeOffset? now = null)
         {
-            if (now == null)
-            {
-                now = DateTimeOffset.UtcNow;
-            }
-            return Create(now.Value.AddMonths(-1), now.Value);
+            now ??= DateTimeOffset.UtcNow;
+
+            DateTimeOffset previousMonthStart = now.Value.AddMonths(-1);
+
+            return Create(previousMonthStart, now.Value);
         }
 
         /// <summary>
@@ -223,12 +207,8 @@ namespace NetCoreUtils
         /// </returns>
         public static Result<DateTimeRange> CreatePreviousDays(int days, DateTimeOffset? now = null)
         {
-            if (now == null)
-            {
-                now = DateTimeOffset.UtcNow;
-            }
-
-            return Create(now.Value.AddDays(-1 * days), now.Value);
+            now ??= DateTimeOffset.UtcNow;
+            return Create(now.Value.AddDays(-days), now.Value);
         }
 
         /// <summary>
